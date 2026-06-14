@@ -49,7 +49,7 @@ function M:apply_cache(bufnr)
 	client.config.settings.ltex[self.setting_cfg] = dicts
 
 	-- send updated settings to LSP server
-	client.notify("workspace/didChangeConfiguration", client.config.settings)
+	client:notify("workspace/didChangeConfiguration", client.config.settings)
 
 	for lang, dict in pairs(dicts) do
 		---@type string

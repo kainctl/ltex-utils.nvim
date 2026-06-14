@@ -158,7 +158,7 @@ function M.actions_from_diags(client, bufnr, diags, process_action, final_cb)
 					if pending_reqs == 0 then
 						final_cb()
 
-						client.notify(
+						client:notify(
 							"workspace/didChangeConfiguration",
 							client.config.settings
 						)
